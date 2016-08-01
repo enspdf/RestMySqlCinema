@@ -81,10 +81,10 @@ public class Services {
 
 	@POST
 	@Path("functions")
-	public Response saveFunction(@FormParam("function_name") String function_name, @FormParam("movie_id") int movie_id, @FormParam("room_id") int room_id) throws Exception {
+	public Response saveFunction(@FormParam("function_name") String function_name, @FormParam("function_hour") Date function_hour, @FormParam("movie_id") int movie_id, @FormParam("room_id") int room_id) throws Exception {
 		 Function function = new Function();
 		 function.setFunction_name(function_name);
-//		 function.setFunction_hour(function_hour);
+		 function.setFunction_hour(function_hour);
 		 function.getMovie().setMovie_id(movie_id);
 		 function.getRoom().setRoom_id(room_id);
 		 functionManager.saveFunction(function);
